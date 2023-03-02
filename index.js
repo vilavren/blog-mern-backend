@@ -16,8 +16,8 @@ mongoose
   .connect(
     'mongodb+srv://admin:wwwwww@cluster0.opvl2gi.mongodb.net/blog?retryWrites=true&w=majority'
   )
-  .then(() => console.log('DB ok'))
-  .catch((err) => console.log('DB error', err))
+  .then(() => console.log('DB - OK'))
+  .catch((err) => console.log('DB - error', err))
 
 const app = express()
 
@@ -80,5 +80,5 @@ app.listen(4444, (err) => {
   if (err) {
     return console.log(err)
   }
-  console.log('Server OK')
+  console.log('Server - OK')
 })

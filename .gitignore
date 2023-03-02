@@ -1,3 +1,5 @@
+.DS_Store
+
 # dependencies
 /.idea
 /node_modules
