@@ -1,23 +1,21 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 import express from 'express'
 import mongoose from 'mongoose'
 import multer from 'multer'
 import cors from 'cors'
 import fs from 'fs'
 
+import { UserController, PostController } from './controllers/index.js'
+import { checkAuth, handleValidationErrors } from './utils/index.js'
 import {
   loginValidation,
   postCreateValidation,
   registerValidation,
 } from './validations.js'
 
-import { UserController, PostController } from './controllers/index.js'
-import { checkAuth, handleValidationErrors } from './utils/index.js'
-
-const MONGODB_URI =
-  'mongodb+srv://admin:wwwwww@cluster0.opvl2gi.mongodb.net/blog?retryWrites=true&w=majority'
-
 mongoose
-  .connect(MONGODB_URI)
+  .connect(process.env.MONGODB_URI)
   .then(() => console.log('DB - OK'))
   .catch((err) => console.log('DB - error', err))
 
