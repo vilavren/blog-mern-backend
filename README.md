@@ -1,4 +1,4 @@
-https://vlavr.ru/
+https://blog.vlavr.ru/
 
 - Node.js
 - Express
